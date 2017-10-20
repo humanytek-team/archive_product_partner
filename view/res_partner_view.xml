@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_group_archive_form" model="ir.ui.view">
+        <field name="name">view.partner.archive.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='toggle_active']" position="replace">
+                <button name="toggle_active" type="object"
+                        groups="archive_product_partner.group_archive"
+                        class="oe_stat_button" icon="fa-archive">
+                    <field name="active" widget="boolean_button"
+                        options='{"terminology": "archive"}'/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
